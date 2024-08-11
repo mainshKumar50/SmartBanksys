@@ -92,6 +92,7 @@ public class FastCash extends JFrame implements ActionListener{
                 int balance  = 0;
                 while(rs.next()){
                     if(rs.getString("type").equals("Deposit")){
+
                         balance += Integer.parseInt(rs.getString("amount"));
 
                     }else{
@@ -101,7 +102,7 @@ public class FastCash extends JFrame implements ActionListener{
 
 
 
-                if(ae.getSource() != exit && balance < Integer.parseInt(amount)){
+            if(ae.getSource() != exit && balance < Integer.parseInt(amount)){
                    JOptionPane.showMessageDialog(null, "Insufficient Balance");
                    return;
                 }
@@ -118,17 +119,14 @@ public class FastCash extends JFrame implements ActionListener{
             } catch (Exception e) {
                 System.out.println(e);
             }
+        }
              
         }
 
-    }
 
     public static void main(String[] args) {
         new FastCash("");
     }
- 
-
-
-    
    
 }
+ 
